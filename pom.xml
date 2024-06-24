@@ -21,6 +21,12 @@
             <artifactId>h2</artifactId>
             <version>2.1.214</version>
         </dependency>
+        <!-- Java 8 버전 맞추기 위한 의존성 추가 -->
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.3.0</version>
+        </dependency>
     </dependencies>
 
     <properties>
