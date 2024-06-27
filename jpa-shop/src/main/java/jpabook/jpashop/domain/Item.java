@@ -1,9 +1,8 @@
 package jpabook.jpashop.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Item {
@@ -13,6 +12,12 @@ public class Item {
     private String name;
     private Integer price;
     private Integer stockQuantity;
+    /**
+     * 다대다 관계 (ManyToMany)는 지양할것
+     * 당연한게, 테이블 설계할 때에도, 다대다 관계에서 테이블을 따로 만드니까.. 당연하겠지
+     */
+    @ManyToMany(mappedBy = "items")
+    private List<Category> categories = new ArrayList<>();
 
     public Long getId() {
         return id;
