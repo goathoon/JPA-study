@@ -17,17 +17,7 @@ public class JpaMain {
 
         tx.begin();
         try {
-            SubMovie movie = new SubMovie();
-            movie.setName("영화이름");
-            movie.setPrice(1000);
-            movie.setActor("actor2");
-            movie.setDirector("director1");
-            em.persist(movie);
 
-            em.flush();
-            em.clear();
-
-            SubMovie findMovie = em.find(SubMovie.class, movie.getId());
 
             tx.commit();
         } catch(Exception e){
