@@ -1,5 +1,6 @@
 package jpabook.jpashop;
 
+import jpabook.jpashop.domain.Book;
 import jpabook.jpashop.domain.Order;
 import jpabook.jpashop.domain.OrderItem;
 import jpabook.jpashop.domain.join.SubMovie;
@@ -17,8 +18,10 @@ public class JpaMain {
 
         tx.begin();
         try {
-
-
+            Book book = new Book();
+            book.setName("어린왕자");
+            book.setAuthor("ddd");
+            em.persist(book);
             tx.commit();
         } catch(Exception e){
             tx.rollback();

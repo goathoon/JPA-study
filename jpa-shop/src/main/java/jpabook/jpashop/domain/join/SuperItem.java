@@ -2,9 +2,9 @@ package jpabook.jpashop.domain.join;
 
 import javax.persistence.*;
 
-@Entity
-@Inheritance(strategy = InheritanceType.JOINED)
-@DiscriminatorColumn // SuperItem 테이블에서 하위 테이블 구별 위한 DType 추가
+//@Entity
+//@Inheritance(strategy = InheritanceType.JOINED)
+//@DiscriminatorColumn // SuperItem 테이블에서 하위 테이블 구별 위한 DType 추가
 public class SuperItem {
     @Id @GeneratedValue
     private Long id;
