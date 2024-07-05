@@ -2,15 +2,17 @@ package jpabook.jpashop.domain;
 
 import javax.persistence.*;
 
+import static javax.persistence.FetchType.*;
+
 @Entity
 public class OrderItem {
     @Id @GeneratedValue
     @Column(name = "ORDER_ITEM_ID")
     private Long id;
-    @ManyToOne @JoinColumn(name = "ORDER_ID")
+    @ManyToOne(fetch = LAZY) @JoinColumn(name = "ORDER_ID")
     private Order order;
 
-    @ManyToOne @JoinColumn(name = "ITEM_ID")
+    @ManyToOne(fetch = LAZY) @JoinColumn(name = "ITEM_ID")
     private Item item;
 
     private Integer orderPrice;
